@@ -8,4 +8,8 @@ public class GameBoard {
         display.updateCell(null, null);
         display.updateCell(null, null);
     }
+
+    public boolean isBlank() {
+        return true;
+    }
 }

@@ -244,7 +244,7 @@ understand the related groups of behavior and see the result. In contrast, the r
 The last sentence of the previous rule leads almost directly to this rule. If your objects are now
 encapsulating the appropriate set of instance variables but the design is still awkward, it is time
 to examine some more direct violations of encapsulation. The behavior will not follow the
-instance variable if it can simply ask for the value in its current location. The idea behind strong
+instance variable if it can simply ask for the value in its current position. The idea behind strong
 encapsulation boundaries is to force programmers working on the code after you leave it to look
 for and place behavior into a single place in the object model. This has many beneficial
 downstream effects, such as a dramatic reduction in duplication errors and a better localization of changes to implement new features. This does not mean that variables of the same class cannot interact with one another in methods such as ‘equals’; because access to instance variables doesn’t leave the class, encapsulation is not violated.

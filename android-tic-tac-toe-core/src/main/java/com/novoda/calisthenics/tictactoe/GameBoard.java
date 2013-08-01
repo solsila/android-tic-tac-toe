@@ -19,8 +19,12 @@ public class GameBoard {
 
     public void acceptMove(Symbol symbol, Position position) {
         if (grid.containsKey(position)) {
-            throw new IllegalMoveException();
+            throw new PositionAlreadyTakenException();
         }
+        if (symbol == Symbol.EMPTY) {
+            throw new NotAMoveSymbolException();
+        }
+
         grid.put(position, symbol);
     }
 }

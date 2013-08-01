@@ -32,19 +32,37 @@ public class GameBoardShould {
         assertFalse(board.isBlank());
     }
 
-    @Test(expected = IllegalMoveException.class)
+    @Test(expected = PositionAlreadyTakenException.class)
     public void notBeAbleToMoveInAPositionAlreadyTaken() throws Exception {
         board.acceptMove(Symbol.CIRCLE, new Position(5));
 
         board.acceptMove(Symbol.CROSS, new Position(5));
     }
 
+    @Test(expected = NotAMoveSymbolException.class)
+    public void notBeAbleToPlayAnEmptySymbol() throws Exception {
+        board.acceptMove(Symbol.EMPTY, new Position(5));
+    }
+
     @Test
-    public void diplayAllEmptyCellsForABlankBoard() throws Exception {
+    public void displayAllEmptyCellsForABlankBoard() throws Exception {
         board.display(gameBoardDisplay);
 
         for (int i = 0; i < BOARD_SIZE; i++) {
             verify(gameBoardDisplay).drawCell(eq(new Position(i)), same(Symbol.EMPTY));
         }
     }
+
+//    @Test
+//    public void displayAcceptedMovesOnTheBoard() throws Exception {
+//        board.acceptMove(Symbol.CIRCLE, new Position(0));
+//        board.acceptMove(Symbol.CROSS, new Position(1));
+//        board.acceptMove(Symbol.CIRCLE, new Position(2));
+//
+//        board.display(gameBoardDisplay);
+//
+//        for (int i = 3; i < BOARD_SIZE; i++) {
+//            verify(gameBoardDisplay).drawCell(eq(new Position(i)), same(Symbol.EMPTY));
+//        }
+//    }
 }

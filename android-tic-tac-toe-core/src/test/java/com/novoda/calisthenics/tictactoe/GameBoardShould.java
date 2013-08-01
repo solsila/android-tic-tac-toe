@@ -9,7 +9,7 @@ import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-public class GameBoardTest {
+public class GameBoardShould {
 
     @Mock
     GameBoardDisplay gameBoardDisplay;
@@ -21,11 +21,11 @@ public class GameBoardTest {
     }
 
     @Test
-    public void showTheBoardOnADisplay() throws Exception {
+    public void show_the_board_on_a_display() throws Exception {
         GameBoard board = new GameBoard();
         board.display(gameBoardDisplay);
-        
-        verify(gameBoardDisplay, atLeastOnce()).updateCell(any(Location.class), any(Player.class));
+
+        verify(gameBoardDisplay, atLeastOnce()).displayCell(any(Location.class), any(Player.class));
     }
 
 }

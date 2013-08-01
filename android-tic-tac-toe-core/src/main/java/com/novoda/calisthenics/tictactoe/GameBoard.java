@@ -4,8 +4,8 @@ public class GameBoard {
 
     // What is this pattern called and why is it important?
     public void display(GameBoardDisplay display) {
-        display.updateCell(null, null);
-        display.updateCell(null, null);
-        display.updateCell(null, null);
+        display.displayCell(null, null);
+        display.displayCell(null, null);
+        display.displayCell(null, null);
     }
 }

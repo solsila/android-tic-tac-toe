@@ -1,5 +1,9 @@
 package com.novoda.calisthenics.tictactoe;
 
+import com.novoda.calisthenics.tictactoe.presentation.CellDisplayer;
+import com.novoda.calisthenics.tictactoe.presentation.GameBoardDisplay;
+import com.novoda.calisthenics.tictactoe.presentation.TicTacToeGameBoardDisplay;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -21,12 +25,12 @@ public class GameBoardDisplayShould {
     public void setUp() throws Exception {
         initMocks(this);
 
-        gameBoardDisplay = new TicTacToeGameBoardDisplay();
+        gameBoardDisplay = new TicTacToeGameBoardDisplay(new CellDisplayer());
     }
 
     @Test
     public void display_location_for_cell() throws Exception {
-        gameBoardDisplay.displayCell(cellLocation, null);
+        //gameBoardDisplay.displayCell(cellLocation, null);
 
         verify(cellLocation).display();
     }

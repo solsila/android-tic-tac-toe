@@ -1,6 +1,7 @@
 package com.novoda.calisthenics.tictactoe;
 
-public enum Player {
+public enum Symbol {
     CIRCLE,
-    CROSS
+    CROSS,
+    EMPTY
 }

@@ -5,23 +5,22 @@ import java.util.Map;
 
 public class GameBoard {
 
-    Map<Position, Player> grid = new HashMap<Position, Player>();
+    Map<Position, Symbol> grid = new HashMap<Position, Symbol>();
 
-    // What is this pattern called and why is it important?
     public void display(GameBoardDisplay display) {
-        display.updateCell(null, null);
-        display.updateCell(null, null);
-        display.updateCell(null, null);
+        for (int i = 0; i < 9; i++) {
+            display.drawCell(new Position(i), Symbol.EMPTY);
+        }
     }
 
     public boolean isBlank() {
         return grid.isEmpty();
     }
 
-    public void acceptMove(Player player, Position position) {
+    public void acceptMove(Symbol symbol, Position position) {
         if (grid.containsKey(position)) {
             throw new IllegalMoveException();
         }
-        grid.put(position, player);
+        grid.put(position, symbol);
     }
 }

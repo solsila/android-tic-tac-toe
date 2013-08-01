@@ -1,8 +1,8 @@
 package com.novoda.calisthenics.tictactoe;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
+import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 
 public class GameBoardShould {
@@ -14,9 +14,18 @@ public class GameBoardShould {
         assertTrue(board.isBlank());
     }
 
-    @Test @Ignore("Not ready yet")
-    public void showTheBoardOnADisplay() throws Exception {
+    @Test
+    public void acceptPlayerMove() throws Exception {
         GameBoard board = new GameBoard();
-        board.display(null);
+
+        board.acceptMove(new Player("Mike"), new Position(0));
+
+        assertFalse(board.isBlank());
     }
+
+//    @Test @Ignore("Not ready yet")
+//    public void showTheBoardOnADisplay() throws Exception {
+//        GameBoard board = new GameBoard();
+//        board.display(null);
+//    }
 }

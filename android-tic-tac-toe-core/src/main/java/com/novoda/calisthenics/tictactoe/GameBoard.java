@@ -9,8 +9,17 @@ public class GameBoard {
 
     public void display(GameBoardDisplay display) {
         for (int i = 0; i < 9; i++) {
-            display.drawCell(new Position(i), Symbol.EMPTY);
+            Position position = new Position(i);
+            display.drawCell(position, symbolFor(position));
         }
+    }
+
+    private Symbol symbolFor(Position position) {
+        if (grid.containsKey(position)) {
+            return grid.get(position);
+        }
+
+        return Symbol.EMPTY;
     }
 
     public boolean isBlank() {

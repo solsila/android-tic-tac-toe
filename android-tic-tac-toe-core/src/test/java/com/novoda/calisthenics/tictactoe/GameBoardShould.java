@@ -53,16 +53,20 @@ public class GameBoardShould {
         }
     }
 
-//    @Test
-//    public void displayAcceptedMovesOnTheBoard() throws Exception {
-//        board.acceptMove(Symbol.CIRCLE, new Position(0));
-//        board.acceptMove(Symbol.CROSS, new Position(1));
-//        board.acceptMove(Symbol.CIRCLE, new Position(2));
-//
-//        board.display(gameBoardDisplay);
-//
-//        for (int i = 3; i < BOARD_SIZE; i++) {
-//            verify(gameBoardDisplay).drawCell(eq(new Position(i)), same(Symbol.EMPTY));
-//        }
-//    }
+    @Test
+    public void displayAcceptedMovesOnTheBoard() throws Exception {
+        board.acceptMove(Symbol.CIRCLE, new Position(0));
+        board.acceptMove(Symbol.CROSS, new Position(1));
+        board.acceptMove(Symbol.CIRCLE, new Position(2));
+
+        board.display(gameBoardDisplay);
+
+        verify(gameBoardDisplay).drawCell(new Position(0), Symbol.CIRCLE);
+        verify(gameBoardDisplay).drawCell(new Position(1), Symbol.CROSS);
+        verify(gameBoardDisplay).drawCell(new Position(2), Symbol.CIRCLE);
+
+        for (int i = 3; i < BOARD_SIZE; i++) {
+            verify(gameBoardDisplay).drawCell(new Position(i), Symbol.EMPTY);
+        }
+    }
 }

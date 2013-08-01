@@ -19,7 +19,6 @@ public class GameBoard {
     }
 
     public void acceptMove(Player player, Position position) {
-        Move move = new Move(player, position);
         if (grid.containsKey(position)) {
             throw new IllegalMoveException();
         }

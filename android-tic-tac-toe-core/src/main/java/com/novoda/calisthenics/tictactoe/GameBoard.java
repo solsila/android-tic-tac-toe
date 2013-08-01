@@ -1,11 +1,11 @@
 package com.novoda.calisthenics.tictactoe;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class GameBoard {
 
-    List<Move> grid = new ArrayList<Move>();
+    Map<Position, Player> grid = new HashMap<Position, Player>();
 
     // What is this pattern called and why is it important?
     public void display(GameBoardDisplay display) {
@@ -19,6 +19,10 @@ public class GameBoard {
     }
 
     public void acceptMove(Player player, Position position) {
-        grid.add(new Move(player, position));
+        Move move = new Move(player, position);
+        if (grid.containsKey(position)) {
+            throw new IllegalMoveException();
+        }
+        grid.put(position, player);
     }
 }

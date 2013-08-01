@@ -21,11 +21,12 @@ public class GameBoardShould {
         assertFalse(board.isBlank());
     }
 
-//    @Test
-//    public void notBeAbleToMoveInAPositionAlreadyTaken() throws Exception {
-//
-//
-//    }
+    @Test(expected = IllegalMoveException.class)
+    public void notBeAbleToMoveInAPositionAlreadyTaken() throws Exception {
+        board.acceptMove(Player.CIRCLE, new Position(5));
+
+        board.acceptMove(Player.CROSS, new Position(5));
+    }
 
     //    @Test @Ignore("Not ready yet")
 //    public void showTheBoardOnADisplay() throws Exception {

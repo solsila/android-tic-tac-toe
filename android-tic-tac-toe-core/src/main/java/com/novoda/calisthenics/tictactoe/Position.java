@@ -5,5 +5,9 @@ public class Position {
 
     public Position(int position) {
         this.position = position;
+
+        if (position < 0 || position > 8) {
+            throw new IllegalArgumentException();
+        }
     }
 }

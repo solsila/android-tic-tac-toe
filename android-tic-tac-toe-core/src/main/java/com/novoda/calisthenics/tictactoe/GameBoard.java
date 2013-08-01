@@ -7,5 +7,17 @@ public class GameBoard {
         display.displayCell(null, null);
         display.displayCell(null, null);
         display.displayCell(null, null);
+        display.displayCell(null, null);
+        display.displayCell(null, null);
+        display.displayCell(null, null);
+        display.displayCell(null, null);
+        display.displayCell(null, null);
+        display.displayCell(null, null);
     }
+
+
+//    -- x x x --
+//    -- x x x --
+//    -- x x x --
+
 }

@@ -12,6 +12,9 @@ public class GameBoardDisplayShould {
     @Mock
     CellLocation cellLocation;
 
+    @Mock
+    Player player;
+
     private GameBoardDisplay gameBoardDisplay;
 
     @Before
@@ -27,5 +30,12 @@ public class GameBoardDisplayShould {
 
         verify(cellLocation).display();
     }
+
+//    @Test
+//    public void display_player_for_cell() throws Exception {
+//        gameBoardDisplay.displayCell(cellLocation, player);
+//
+//        verify(player).display();
+//    }
 
 }

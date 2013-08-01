@@ -40,11 +40,19 @@ public class GameBoardShould {
     }
 
     @Test
-    public void diplayAllEmptyCellsForABlankBoard() throws Exception {
+    public void displayAllEmptyCellsForABlankBoard() throws Exception {
         board.display(gameBoardDisplay);
 
         for (int i = 0; i < BOARD_SIZE; i++) {
             verify(gameBoardDisplay).drawCell(eq(new Position(i)), same(Symbol.EMPTY));
         }
     }
+//
+//    @Test
+//    public void displayAcceptedMovesOnTheBoard() throws Exception {
+//        board.acceptMove(Symbol.CIRCLE, new Position(0));
+//        board.acceptMove(Symbol.CROSS, new Position(3));
+//        board.acceptMove(Symbol.CIRCLE, new Position(2));
+//
+//    }
 }
